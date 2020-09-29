@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
+
+import Profile from './components/Profile';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,7 +13,9 @@ ReactDOM.render(
 
 function App() {
   return ( 
-    <div id="app"></div>
+    <div id="app">
+      <Profile></Profile>
+    </div>
    );
 }
  
