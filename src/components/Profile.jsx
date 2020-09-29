@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Profiles() {
   const profileData = {
-    userName: 'Ahmed Doe',
+    userName: 'Michael Scott',
     userID: 100001,
     avatarURL:
       'https://www.arivalevent.com/wp-content/uploads/2018/06/michael-scott.jpg',

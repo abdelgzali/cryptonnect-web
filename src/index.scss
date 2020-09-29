@@ -124,7 +124,7 @@ div#profile {
         flex-direction: column;
         text-align: center;
         margin-bottom: 1rem;
-        padding-bottom: 1rem;
+        padding: 1rem 0;
         background-color: #fff;
         border-radius: 7px;
 
@@ -183,6 +183,14 @@ div#profile {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  div#profile {
+    section {
+      padding: 1rem;
     }
   }
 }
