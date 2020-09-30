@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import QRCode from 'qrcode.react';
+
+const coinPrefix = {
+  bitcoin: 'bitcoin:',
+  ethereum: 'ethereum:',
+  bitcoinCash: '',
+};
 
 export default function Profiles() {
   const profileData = {
@@ -10,14 +17,17 @@ export default function Profiles() {
       {
         label: 'BTC Main',
         address: 'bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs',
+        coinType: 'bitcoin',
       },
       {
         label: 'ETH Main',
         address: '0x2f18d95775fd0edf121c613dc89bc71180378fb1',
+        coinType: 'ethereum',
       },
       {
         label: 'BCH Main',
         address: 'bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v',
+        coinType: 'bitcoin cash',
       },
     ],
   };
@@ -37,13 +47,19 @@ export default function Profiles() {
     if (hasTrueState) {
       setTimeout(() => setCopyState(initialCopyState), 3000);
     }
-  }, [initialCopyState, copyState])
+  }, [initialCopyState, copyState]);
 
   const copyToClipboard = (event, text, index) => {
     navigator.clipboard.writeText(text);
     const updatedCopyState = { ...copyState };
     updatedCopyState[index] = true;
     setCopyState(updatedCopyState);
+  };
+
+  const createURI = (wallet) => {
+    const prefix = coinPrefix[wallet.coinType];
+    let URI = prefix + wallet.address;
+    return URI;
   };
 
   return (
@@ -63,14 +79,17 @@ export default function Profiles() {
           {profileData.wallets.map((wallet, index) => {
             return (
               <li key={index}>
-                <h3>{wallet.label}</h3>
-                <p onClick={(e) => copyToClipboard(e, wallet.address, index)}>
-                  {wallet.address}
-                  <span className="material-icons">content_copy</span>
-                  {copyState[index] && (
-                    <span className="snack-bar">copied!</span>
-                  )}
-                </p>
+                <div className="wallet-info">
+                  <h3>{wallet.label}</h3>
+                  <p onClick={(e) => copyToClipboard(e, wallet.address, index)}>
+                    {wallet.address}
+                    <span className="material-icons">content_copy</span>
+                    {copyState[index] && (
+                      <span className="snack-bar">copied!</span>
+                    )}
+                  </p>
+                </div>
+                <QRCode value={createURI(wallet)} className="qrcode"/>
               </li>
             );
           })}
