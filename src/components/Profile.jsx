@@ -82,7 +82,7 @@ export default function Profiles() {
         <ul>
           {profileData.wallets.map((wallet, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="card">
                 <div className="wallet-info">
                   <h3>{wallet.label}</h3>
                   <p onClick={(e) => copyToClipboard(e, wallet.address, index)}>

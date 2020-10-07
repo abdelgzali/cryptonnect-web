@@ -1,0 +1,73 @@
+section#dashboard {
+  padding: 2rem;
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  > div.wallets-list {
+    span.wallets-scroll-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 70%
+      );
+      height: 100%;
+      width: 100px;
+    }
+
+    > #wallets-container {
+      display: flex;
+      position: relative;
+      flex-flow: row nowrap;
+      padding: 2rem 0;
+      overflow: scroll;
+      scroll-behavior: smooth;
+
+      div.wallet {
+        min-width: 200px;
+        width: 200px;
+        height: 250px;
+        padding: 2rem 1rem 1rem;
+        border-radius: 10px;
+        background-color: #5352ed;
+        color: #ffffff;
+
+        div.coin-stats {
+          height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          p.coin-price {
+            font-size: 32px;
+            font-weight: 600;
+          }
+        }
+
+        &:not(:first-of-type) {
+          margin: 0 1rem;
+        }
+      }
+
+      a.list-end {
+        color: #ec7263;
+        width: 95px;
+        height: 250px;
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        span.material-icons {
+          font-size: 48px;
+          z-index: 5;
+        }
+      }
+    }
+  }
+}

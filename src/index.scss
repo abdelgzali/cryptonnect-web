@@ -1,4 +1,7 @@
-/* CSS resets */
+@import 'styles/nav';
+@import 'styles/dashboard';
+
+// CSS resets
 
 html {
   box-sizing: border-box;
@@ -74,14 +77,34 @@ button {
   }
 }
 
+// common classes
+.card {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07), 0 5px 5px rgba(0, 0, 0, 0.07);
+}
+
 // FONTS
-h2 {
+h2,
+h3 {
   font-weight: 600;
+}
+
+h1 {
+  font-size: 28px;
 }
 
 #app {
   min-height: 100vh;
-  background-color: #ecf0f1;
+  background-color: rgb(255, 255, 255);
+}
+
+#app #app-container > *:not(.nav-container) {
+  z-index: 3;
+}
+
+#app > div#app-container {
+  padding-top: 70px;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* PROFILE */
@@ -138,8 +161,6 @@ div#profile {
         padding: 2rem 1rem;
         background-color: #fff;
         border-radius: 5px;
-        box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07),
-          0 5px 5px rgba(0, 0, 0, 0.07);
 
         div.wallet-info {
           margin-bottom: 1rem;
@@ -154,9 +175,7 @@ div#profile {
             font-size: 12px;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            word-wrap: break-word;
 
             span {
               font-size: 14px;
