@@ -65,7 +65,7 @@ export default function Profiles() {
   };
 
   return (
-    <div id="profile">
+    <section id="profile">
       <header className="profile-header">
         <figure>
           <img src={profileData.avatarURL} alt="avatar" />
@@ -82,7 +82,7 @@ export default function Profiles() {
         <ul>
           {profileData.wallets.map((wallet, index) => {
             return (
-              <li key={index} className="card">
+              <li key={index} className="tile">
                 <div className="wallet-info">
                   <h3>{wallet.label}</h3>
                   <p onClick={(e) => copyToClipboard(e, wallet.address, index)}>
@@ -108,6 +108,6 @@ export default function Profiles() {
           })}
         </ul>
       </section>
-    </div>
+    </section>
   );
 }

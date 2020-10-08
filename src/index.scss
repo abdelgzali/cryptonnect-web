@@ -78,7 +78,7 @@ button {
 }
 
 // common classes
-.card {
+.tile {
   box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07), 0 5px 5px rgba(0, 0, 0, 0.07);
 }
 
@@ -105,13 +105,18 @@ h1 {
   padding-top: 70px;
   min-height: 100vh;
   position: relative;
+
+  & > section {
+    max-width: 768px;
+    margin: 0 auto;
+  }
 }
 
 /* PROFILE */
-div#profile {
+section#profile {
   header > figure,
   section {
-    max-width: 768px;
+    //max-width: 768px;
     margin: 0 auto;
   }
 
@@ -232,7 +237,7 @@ div#profile {
 }
 
 @media screen and (max-width: 479px) {
-  div#profile {
+  section#profile {
     header.profile-header > figure {
       padding: 2rem 1rem;
     }
