@@ -4,7 +4,7 @@ import './index.scss';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Dashboard from './views/Dashboard';
-import Profile from './components/Profile';
+import Profile from './views/Profile';
 
 import Navigation from './components/Navigation';
 
