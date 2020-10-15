@@ -20,14 +20,6 @@ function App() {
     <div id="app">
       <Router>
         <div id="app-container">
-          {/* <ul>
-            <li>
-              <Link to="/dashboard">dashboard</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-          </ul> */}
           <Navigation />
 
           <Switch>
