@@ -6,7 +6,7 @@ function CoinsList({ coinName, coins }) {
   return (
     <div className="coins-list">
       <h3>Coins</h3>
-      <div id="coins-container">
+      <div id="coins-container" className="x-scroll">
         <span id="list-start"></span>
         {coins.length &&
           coins.map((coin) => <Coin key={coin.name} coin={coin} />)}
@@ -15,7 +15,7 @@ function CoinsList({ coinName, coins }) {
         </a>
       </div>
 
-      <span className="coins-scroll-btn"></span>
+      <span className="fade-spacer"></span>
     </div>
   );
 }
