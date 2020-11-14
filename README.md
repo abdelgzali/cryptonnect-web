@@ -5,16 +5,17 @@ Cryptonnect makes it easy to get paid by giving you a public wallet profile wher
 \
 **To get started in the project directory, you can run:**
 
+*Install required dependencies*
 ```
-npm install
+npm install  
 ```
-Installs required dependencies
-\
 
+\
+*Run the app in the development mode.*
 ```
 npm run
 ```
-Runs the app in the development mode.
+
 Open http://localhost:3000 to view it in the browser.
 
 
