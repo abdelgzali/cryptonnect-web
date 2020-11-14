@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 
 import Dashboard from './views/Dashboard';
 import Profile from './views/Profile';
@@ -23,6 +29,11 @@ function App() {
           <Navigation />
 
           <Switch>
+            <Route
+              exact
+              path="/"
+              component={() => <Redirect to="/dashboard" />}
+            />
             <Route exact path="/profile">
               <Profile />
             </Route>

@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function Friendslist({ Friends }) {
-  useEffect(() => {
-    console.log(Friends);
-  }, []);
 
   const imgStyles = (url) => {
     return {
@@ -12,6 +9,7 @@ function Friendslist({ Friends }) {
       backgroundPosition: 'center',
     };
   };
+
   return (
     <section>
       <h3>Friends</h3>
@@ -21,7 +19,7 @@ function Friendslist({ Friends }) {
           Friends.length &&
           Friends.map((friend) => {
             return (
-              <div className="friend">
+              <div className="friend" key={friend.name}>
                 <figure>
                   <div
                     className="friend-avatar"
