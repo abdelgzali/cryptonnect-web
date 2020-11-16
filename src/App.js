@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
   useParams,
 } from 'react-router-dom';
@@ -48,7 +47,7 @@ function PublicProfile() {
   const { userHandle } = useParams();
 
   // only temporary
-  // matches userhandle from friendslist in sample user data
+  // matches userhandle from param to user data from friendslist, found in sample user data
   const findUserData = (userHandle) => {
     const [friendUserData] = userData.friends.filter((friend) => {
       if (userHandle === friend.userHandle) return friend;

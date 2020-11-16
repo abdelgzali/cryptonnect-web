@@ -4,14 +4,11 @@ import ls from 'local-storage';
 import CoinsList from '../components/CoinsList';
 import FriendsList from '../components/FriendsList';
 
-// sample user data
-import userData from '../user-data.json';
-
 const apiKey = '60c07af6-d8b2-4646-836d-bfb0e70328eb',
   testKey = 'b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c',
   corsProxy = 'https://cors-anywhere.herokuapp.com/'; //same-origin error bypass; DISABLE FOR PROD
 
-function Dashboard() {
+function Dashboard({ userData }) {
   const [coins, updateCoins] = useState(ls('coinsData') ? ls('coinsData') : []);
   const [isLoading, toggleIsLoading] = useState(false);
 
