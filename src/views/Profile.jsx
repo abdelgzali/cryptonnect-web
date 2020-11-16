@@ -8,34 +8,9 @@ const coinPrefix = {
   bitcoinCash: '',
 };
 
-export default function Profiles() {
-  const profileData = {
-    userName: 'Michael Scott',
-    userHandle: 'michaelscott',
-    userID: 100001,
-    avatarURL:
-      'https://www.arivalevent.com/wp-content/uploads/2018/06/michael-scott.jpg',
-    wallets: [
-      {
-        label: 'BTC Main',
-        address: 'bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs',
-        coinType: 'bitcoin',
-      },
-      {
-        label: 'ETH Main',
-        address: '0x2f18d95775fd0edf121c613dc89bc71180378fb1',
-        coinType: 'ethereum',
-      },
-      {
-        label: 'BCH Main',
-        address: 'bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v',
-        coinType: 'bitcoincash',
-      },
-    ],
-  };
-
+export default function Profiles({ userData }) {
   const initialCopyState = {};
-  for (const i in profileData.wallets) {
+  for (const i in userData.wallets) {
     initialCopyState[i] = false;
   }
 
@@ -68,10 +43,10 @@ export default function Profiles() {
     <section id="profile">
       <header className="profile-header">
         <figure>
-          <img src={profileData.avatarURL} alt="avatar" />
+          <img src={userData.avatarURL} alt="avatar" />
           <figcaption>
-            <h2>{profileData.userName}</h2>
-            <p>{`@${profileData.userHandle}`}</p>
+            <h2>{userData.name}</h2>
+            <p>{`@${userData.userHandle}`}</p>
             <button>FOLLOW</button>
           </figcaption>
         </figure>
@@ -80,7 +55,7 @@ export default function Profiles() {
       <section>
         <h3>Wallets</h3>
         <ul>
-          {profileData.wallets.map((wallet, index) => {
+          {userData.wallets.map((wallet, index) => {
             return (
               <li key={index} className="tile">
                 <div className="wallet-info">

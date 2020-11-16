@@ -1,0 +1,135 @@
+{
+  "name": "Michael Scott",
+  "userHandle": "michaelscott",
+  "userID": 100001,
+  "avatarURL": "https://www.arivalevent.com/wp-content/uploads/2018/06/michael-scott.jpg",
+  "wallets": [
+    {
+      "label": "BTC Main",
+      "address": "bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs",
+      "coinType": "bitcoin"
+    },
+    {
+      "label": "ETH Main",
+      "address": "0x2f18d95775fd0edf121c613dc89bc71180378fb1",
+      "coinType": "ethereum"
+    },
+    {
+      "label": "BCH Main",
+      "address": "bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v",
+      "coinType": "bitcoincash"
+    }
+  ],
+  "friends": [
+    {
+      "name": "Ryan Howard",
+      "userHandle": "therealryanhoward",
+      "avatarURL": "https://media2.s-nbcnews.com/j/streams/2012/June/120627/434210-120627-ent-bjnovak-vmed.fit-760w.jpg",
+      "wallets": [
+        {
+          "label": "BTC Main",
+          "address": "bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs",
+          "coinType": "bitcoin"
+        },
+        {
+          "label": "ETH Main",
+          "address": "0x2f18d95775fd0edf121c613dc89bc71180378fb1",
+          "coinType": "ethereum"
+        },
+        {
+          "label": "BCH Main",
+          "address": "bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v",
+          "coinType": "bitcoincash"
+        }
+      ]
+    },
+    {
+      "name": "Jim Halpert",
+      "userHandle": "bigtuna",
+      "avatarURL": "https://pbs.twimg.com/profile_images/3171824697/ef75d90df2e65ce326acf30262df5918.jpeg",
+      "wallets": [
+        {
+          "label": "BTC Main",
+          "address": "bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs",
+          "coinType": "bitcoin"
+        },
+        {
+          "label": "ETH Main",
+          "address": "0x2f18d95775fd0edf121c613dc89bc71180378fb1",
+          "coinType": "ethereum"
+        },
+        {
+          "label": "BCH Main",
+          "address": "bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v",
+          "coinType": "bitcoincash"
+        }
+      ]
+    },
+    {
+      "name": "Todd Packer",
+      "userHandle": "willhung",
+      "avatarURL": "https://upload.wikimedia.org/wikipedia/en/6/61/Todd_Packer.jpg",
+      "wallets": [
+        {
+          "label": "BTC Main",
+          "address": "bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs",
+          "coinType": "bitcoin"
+        },
+        {
+          "label": "ETH Main",
+          "address": "0x2f18d95775fd0edf121c613dc89bc71180378fb1",
+          "coinType": "ethereum"
+        },
+        {
+          "label": "BCH Main",
+          "address": "bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v",
+          "coinType": "bitcoincash"
+        }
+      ]
+    },
+    {
+      "name": "Pam Halpert",
+      "userHandle": "mrspamhalpert",
+      "avatarURL": "https://cdn.costumewall.com/wp-content/uploads/2018/09/pam-beesly.jpg",
+      "wallets": [
+        {
+          "label": "BTC Main",
+          "address": "bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs",
+          "coinType": "bitcoin"
+        },
+        {
+          "label": "ETH Main",
+          "address": "0x2f18d95775fd0edf121c613dc89bc71180378fb1",
+          "coinType": "ethereum"
+        },
+        {
+          "label": "BCH Main",
+          "address": "bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v",
+          "coinType": "bitcoincash"
+        }
+      ]
+    },
+    {
+      "name": "Dwight Howard",
+      "userHandle": "beetsbearsbattlestar",
+      "avatarURL": "https://theofficeanalytics.files.wordpress.com/2017/11/dwight.jpeg",
+      "wallets": [
+        {
+          "label": "BTC Main",
+          "address": "bc1qq56tsnwm84x6ulnc0gs02na5tvd0qgnqyy6nxs",
+          "coinType": "bitcoin"
+        },
+        {
+          "label": "ETH Main",
+          "address": "0x2f18d95775fd0edf121c613dc89bc71180378fb1",
+          "coinType": "ethereum"
+        },
+        {
+          "label": "BCH Main",
+          "address": "bitcoincash:qrt8d7zl46wlarslt2p9ha357vzg9xfn2ydfptr08v",
+          "coinType": "bitcoincash"
+        }
+      ]
+    }
+  ]
+}

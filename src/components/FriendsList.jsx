@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Friendslist({ Friends }) {
-
   const imgStyles = (url) => {
     return {
       backgroundImage: `url(${url})`,
@@ -14,23 +14,22 @@ function Friendslist({ Friends }) {
     <section>
       <h3>Friends</h3>
       <div className="x-scroll">
-      <span id="friends-list-start"></span>
+        <span id="friends-list-start"></span>
         {Friends &&
           Friends.length &&
           Friends.map((friend) => {
             return (
-              <div className="friend" key={friend.name}>
+              <Link to={`/${friend.userHandle}`} className="friend" key={friend.name}>
                 <figure>
                   <div
                     className="friend-avatar"
-                    style={imgStyles(friend.photoURL)}
-                  >
-                  </div>
+                    style={imgStyles(friend.avatarURL)}
+                  ></div>
                   <figcaption>
                     <p>{friend.name.split(/ (.*)/)[0]}</p>
                   </figcaption>
                 </figure>
-              </div>
+              </Link>
             );
           })}
         <a href="#friends-list-start" className="list-end">
