@@ -13,9 +13,6 @@ import Profile from './views/Profile';
 
 import Navigation from './components/Navigation';
 
-// sample user data
-import userData from './user-data.json';
-
 function App() {
   return (
     <div id="app">
@@ -29,32 +26,13 @@ function App() {
               path="/"
               component={() => <Redirect to="/dashboard" />}
             />
-            <Route exact path="/profile">
-              <Profile userData={userData} />
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard userData={userData} />
-            </Route>
-            <Route path="/:userHandle" component={PublicProfile} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/:userHandle" component={Profile} />
           </Switch>
         </div>
       </Router>
     </div>
   );
-}
-
-function PublicProfile() {
-  const { userHandle } = useParams();
-
-  // only temporary
-  // matches userhandle from param to user data from friendslist, found in sample user data
-  const findUserData = (userHandle) => {
-    const [friendUserData] = userData.friends.filter((friend) => {
-      if (userHandle === friend.userHandle) return friend;
-    });
-    return friendUserData;
-  };
-  return <Profile userData={findUserData(userHandle)} />;
 }
 
 export default App;

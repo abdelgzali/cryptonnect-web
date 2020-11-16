@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode.react';
-// import Slider from 'react-slick';
+import { useParams } from 'react-router-dom';
+
+import userData from '../user-data.json';
 
 const coinPrefix = {
   bitcoin: 'bitcoin:',
@@ -8,7 +10,9 @@ const coinPrefix = {
   bitcoinCash: '',
 };
 
-export default function Profiles({ userData }) {
+export default function Profiles() {
+  const {userHandle} = useParams();
+
   const initialCopyState = {};
   for (const i in userData.wallets) {
     initialCopyState[i] = false;
@@ -39,14 +43,24 @@ export default function Profiles({ userData }) {
     return URI;
   };
 
+  // only temporary
+  // matches userhandle from param to user data from friendslist, found in sample user data
+  const findUserData = (handle) => {
+    const [friendUserData] = userData.friends.filter((friend) => {
+      if (handle === friend.userHandle) return friend;
+    });
+    return friendUserData;
+  };
+  const user = userHandle === userData.userHandle ? userData : findUserData(userHandle);
+
   return (
     <section id="profile">
       <header className="profile-header">
         <figure>
-          <img src={userData.avatarURL} alt="avatar" />
+          <img src={user.avatarURL} alt="avatar" />
           <figcaption>
-            <h2>{userData.name}</h2>
-            <p>{`@${userData.userHandle}`}</p>
+            <h2>{user.name}</h2>
+            <p>{`@${user.userHandle}`}</p>
             <button>FOLLOW</button>
           </figcaption>
         </figure>
@@ -55,7 +69,7 @@ export default function Profiles({ userData }) {
       <section>
         <h3>Wallets</h3>
         <ul>
-          {userData.wallets.map((wallet, index) => {
+          {user.wallets.map((wallet, index) => {
             return (
               <li key={index} className="tile">
                 <div className="wallet-info">
